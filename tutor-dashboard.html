@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutor Dashboard | Easygrade</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Easygrade logo" class="site-logo" />
+        <span>Easygrade</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="student-dashboard.html">Student Dashboard</a>
+      </nav>
+      <button id="siteLogoutButton" class="site-logout" type="button" style="display:none;">
+        <img src="assets/logout-icon.svg" alt="Logout" />
+        <span>Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container dashboard-page">
+    <section class="dashboard-panel">
+      <h1>Tutor Dashboard</h1>
+      <p>Review all enquiries from students and manage requests in one place.</p>
+    </section>
+
+    <section class="dashboard-panel tutor-login" id="tutorLoginPanel">
+      <h2>Tutor Login</h2>
+      <p>Enter your tutor credentials to review student enquiries.</p>
+      <form id="tutorLoginForm">
+        <label>
+          Email
+          <input type="email" name="email" required placeholder="tutor@example.com" />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required placeholder="Enter password" />
+        </label>
+        <button class="button" type="submit">Login</button>
+      </form>
+      <div id="tutorLoginMessage" class="form-message"></div>
+    </section>
+
+    <section class="dashboard-panel tutor-summary" id="tutorSummaryPanel" style="display:none;">
+      <h2>Total enquiries</h2>
+      <div class="summary-card">
+        <div class="summary-count" id="enquiryCount">0</div>
+        <div class="summary-label">Total enquiries</div>
+      </div>
+    </section>
+
+    <section class="dashboard-panel" id="tutorQuizPanel" style="display:none;">
+      <h2>Upload Online Quiz</h2>
+      <p>Build and publish a quiz that students can attempt in 1 minute.</p>
+      <div class="quiz-builder">
+        <label>
+          Quiz title
+          <input type="text" id="quizTitle" placeholder="Quiz title" />
+        </label>
+        <label>
+          Question
+          <textarea id="quizQuestionText" rows="2" placeholder="Enter the question"></textarea>
+        </label>
+        <label>
+          Option A
+          <input type="text" id="quizOptionA" placeholder="Option A" />
+        </label>
+        <label>
+          Option B
+          <input type="text" id="quizOptionB" placeholder="Option B" />
+        </label>
+        <label>
+          Option C
+          <input type="text" id="quizOptionC" placeholder="Option C" />
+        </label>
+        <label>
+          Option D
+          <input type="text" id="quizOptionD" placeholder="Option D" />
+        </label>
+        <label>
+          Correct answer
+          <select id="quizCorrectAnswer">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </label>
+        <div class="quiz-actions">
+          <button id="addQuizQuestionBtn" type="button" class="button secondary">Add Question</button>
+          <button id="publishQuizBtn" type="button" class="button">Publish Quiz</button>
+        </div>
+      </div>
+      <div id="tutorQuizDraftList" class="quiz-draft-list"></div>
+    </section>
+
+    <section class="dashboard-panel" id="tutorQuizListPanel" style="display:none;">
+      <h2>Published Quizzes</h2>
+      <div id="tutorQuizList"></div>
+    </section>
+
+    <section class="dashboard-panel" id="tutorEnquiriesPanel" style="display:none;">
+      <h2>Enquiry details</h2>
+      <div id="tutorEnquiriesList"></div>
+      <button id="tutorLogoutButton" class="button secondary" style="margin-top:1rem;">Logout</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Easygrade © 2026 | Tutor dashboard.</p>
+      <div>
+        <p>Contact: <a href="mailto:support@easygrade.com">support@easygrade.com</a></p>
+        <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <div id="chatWidget" class="chat-widget" aria-hidden="true">
+    <button id="chatToggle" class="chat-toggle"><img src="assets/chat-icon.svg" alt="Chat" class="chat-toggle-icon"/><span class="chat-toggle-label">Chat</span></button>
+    <div class="chat-panel" id="chatPanel">
+      <div class="chat-header">
+        <strong id="chatTitle">Chat with Tutor</strong>
+        <button id="chatClose" aria-label="Close">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" placeholder="Write a message..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

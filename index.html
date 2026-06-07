@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Easygrade</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="introOverlay" class="intro-overlay" aria-hidden="true">
+    <div class="intro-inner">
+      <img src="assets/logo.png" alt="" class="intro-logo" />
+      <h2 class="intro-title">Easygrade</h2>
+      <div class="intro-buffer" aria-hidden="true">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Easygrade logo" class="site-logo" />
+        <span>Easygrade</span>
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#enquiry">Enquiry</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <button id="siteLogoutButton" class="site-logout" type="button" style="display:none;">
+        <img src="assets/logout-icon.svg" alt="Logout" />
+        <span>Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <span class="eyebrow">Welcome to Easygrade</span>
+        <h1>Personalized tutoring for faster learning</h1>
+        <p>Easygrade connects students with expert tutors, progress tracking, and instant support for every subject.</p>
+        <div class="hero-actions">
+          <a class="button" href="#enquiry">Ask for a Tutor</a>
+          <a class="button secondary" href="login.html">Login</a>
+          <a class="button secondary" id="studentQuizzesButton" href="student-dashboard.html" style="display:none;">Quizzes</a>
+        </div>
+        <div class="hero-highlights">
+          <div>
+            <strong>24/7 support</strong>
+            <span>Quick tutor responses</span>
+          </div>
+          <div>
+            <strong>500+ reviews</strong>
+            <span>Trusted by learners</span>
+          </div>
+        </div>
+        <div class="home-summary-card" id="homeTutorEnquirySummary" style="display:none;">
+          <div class="summary-label">Total enquiries</div>
+          <div class="summary-count" id="homeTutorEnquiryCount">0</div>
+        </div>
+        <div class="session-note" id="homeSessionNotice" style="display:none;"></div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/hero-illustration.svg" alt="Student studying with tutor" />
+        <div class="hero-stat-card">
+          <p>Top-rated tutors</p>
+          <strong>95%</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="container services">
+      <div class="section-heading">
+        <span>How we help</span>
+        <h2>Learn on your schedule with expert support</h2>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>One-on-one tutoring</h3>
+          <p>Focused lessons designed for your pace and academic goals.</p>
+        </article>
+        <article class="service-card">
+          <h3>Exam preparation</h3>
+          <p>Targeted revision plans for tests, exams, and coursework confidence.</p>
+        </article>
+        <article class="service-card">
+          <h3>Homework support</h3>
+          <p>Clear guidance that builds understanding and independence.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container tutor-info">
+      <div class="section-heading">
+        <span>Meet the tutor</span>
+        <h2>Your Easygrade tutor is experienced, friendly, and results-focused</h2>
+      </div>
+      <div class="tutor-grid">
+        <article class="tutor-card">
+          <h3>Ms. Ananya Sharma</h3>
+          <p>Lead tutor at Easygrade with 8 years of teaching experience in mathematics and science.</p>
+          <ul>
+            <li>Subject expertise: Math, Physics, Chemistry</li>
+            <li>Personalized lesson plans</li>
+            <li>Test-focused preparation and revision</li>
+            <li>Friendly, patient, and student-focused</li>
+          </ul>
+        </article>
+        <article class="tutor-card">
+          <h3>What to expect</h3>
+          <ul>
+            <li>Clear concept-building and step-by-step explanations</li>
+            <li>Homework help, doubt clearing, and progress tracking</li>
+            <li>Flexible sessions that adapt to your schedule</li>
+            <li>Support for both board and entrance exam preparation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="container feature-section">
+      <div class="section-heading">
+        <span>How it works</span>
+        <h2>Start learning in three easy steps</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <img src="assets/student-avatar.svg" alt="Profile icon" />
+          <h3>Tell us your goal</h3>
+          <p>Share your subject, grade level, and preferred schedule.</p>
+        </article>
+        <article class="feature-card">
+          <img src="assets/student-avatar.svg" alt="Profile icon" />
+          <h3>Get matched</h3>
+          <p>Easygrade pairs you with a great tutor who fits your needs.</p>
+        </article>
+        <article class="feature-card">
+          <img src="assets/student-avatar.svg" alt="Profile icon" />
+          <h3>Start learning</h3>
+          <p>Begin lessons, track progress, and improve faster.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container testimonials">
+      <div class="section-heading">
+        <span>Success stories</span>
+        <h2>Students love Easygrade</h2>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <img src="assets/review-avatar.svg" alt="Student testimonial" />
+          <h3>Emily, Grade 10</h3>
+          <p>"Easygrade helped me improve my math grade from B to A in just six weeks."</p>
+          <div class="stars">★★★★★</div>
+        </article>
+        <article class="testimonial-card">
+          <img src="assets/review-avatar.svg" alt="Student testimonial" />
+          <h3>Jai, Class 12</h3>
+          <p>"The tutors are patient, clear, and great at explaining difficult concepts."</p>
+          <div class="stars">★★★★★</div>
+        </article>
+        <article class="testimonial-card">
+          <img src="assets/review-avatar.svg" alt="Student testimonial" />
+          <h3>Riya, Grade 8</h3>
+          <p>"I feel more confident in science now and enjoy my lessons every week."</p>
+          <div class="stars">★★★★★</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container contact-info">
+      <div class="section-heading">
+        <span>Get in touch</span>
+        <h2>Have questions? Contact Easygrade</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <p><a href="mailto:support@easygrade.com">support@easygrade.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Phone</h3>
+          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="enquiry" class="container enquiry-section">
+      <div class="enquiry-panel">
+        <h2>Make an enquiry</h2>
+        <p>Complete the form and our tutors will review your request.</p>
+        <form id="enquiryForm">
+          <label>
+            Full Name
+            <input type="text" name="name" required placeholder="Student name" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="student@example.com" />
+          </label>
+          <label>
+            Contact Number
+            <input type="tel" name="phone" required placeholder="+91 98765 43210" />
+          </label>
+          <label>
+            Subject or Topic
+            <input type="text" name="subject" required placeholder="Mathematics, Physics, English..." />
+          </label>
+          <label>
+            Enquiry Details
+            <textarea name="message" rows="5" required placeholder="Describe your learning needs..."></textarea>
+          </label>
+          <button type="submit" class="button">Submit Enquiry</button>
+        </form>
+        <div id="enquiryMessage" class="form-message"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Easygrade © 2026 | Simplified student support and tutor management.</p>
+      <div>
+        <p>Contact us: <a href="mailto:support@easygrade.com">support@easygrade.com</a></p>
+        <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <div id="chatWidget" class="chat-widget" aria-hidden="true">
+    <button id="chatToggle" class="chat-toggle"><img src="assets/chat-icon.svg" alt="Chat" class="chat-toggle-icon"/><span class="chat-toggle-label">Chat</span></button>
+    <div class="chat-panel" id="chatPanel">
+      <div class="chat-header">
+        <strong id="chatTitle">Chat with Tutor</strong>
+        <button id="chatClose" aria-label="Close">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" placeholder="Write a message..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
