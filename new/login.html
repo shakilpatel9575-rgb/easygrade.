@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Easygrade</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Easygrade logo" class="site-logo" />
+        <span>Easygrade</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+      <button id="siteLogoutButton" class="site-logout" type="button" style="display:none;">
+        <img src="assets/logout-icon.svg" alt="Logout" />
+        <span>Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container dashboard-page">
+    <section class="dashboard-panel">
+      <h1>Login to Easygrade</h1>
+      <p>Choose student or tutor access from one place.</p>
+      <div id="loginStatus" class="form-message"></div>
+    </section>
+
+    <section class="dashboard-panel student-login" id="loginPanel">
+      <div class="auth-switch">
+        <button type="button" class="auth-tab active" id="showStudentTab">Student</button>
+        <button type="button" class="auth-tab" id="showTutorTab">Tutor</button>
+      </div>
+      <div id="studentTab">
+        <div class="auth-switch" style="margin-bottom:1rem;">
+          <button type="button" class="auth-tab active" id="showStudentLogin">Login</button>
+          <button type="button" class="auth-tab" id="showStudentSignup">Create Account</button>
+        </div>
+        <div id="studentLoginSection">
+          <form id="loginStudentForm">
+            <label>
+              Email
+              <input type="email" name="email" required placeholder="student@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required placeholder="Enter password" />
+            </label>
+            <button class="button" type="submit">Login</button>
+          </form>
+          <div id="loginStudentMessage" class="form-message"></div>
+        </div>
+        <div id="studentSignupSection" style="display:none;">
+          <form id="signupStudentForm">
+            <label>
+              Email
+              <input type="email" name="email" required placeholder="student@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required placeholder="Create password" />
+            </label>
+            <label>
+              Confirm Password
+              <input type="password" name="confirmPassword" required placeholder="Confirm password" />
+            </label>
+            <button class="button" type="submit">Create Account</button>
+          </form>
+          <div id="signupStudentMessage" class="form-message"></div>
+        </div>
+      </div>
+
+      <div id="tutorTab" style="display:none;">
+        <form id="loginTutorForm">
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="tutor@example.com" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required placeholder="Enter password" />
+          </label>
+          <button class="button" type="submit">Login</button>
+        </form>
+        <div id="loginTutorMessage" class="form-message"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Easygrade © 2026 | Login to access student or tutor dashboard.</p>
+      <div>
+        <p>Contact: <a href="mailto:support@easygrade.com">support@easygrade.com</a></p>
+        <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

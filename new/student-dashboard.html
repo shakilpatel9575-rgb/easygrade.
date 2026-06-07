@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | Easygrade</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Easygrade logo" class="site-logo" />
+        <span>Easygrade</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#studentQuizzesPanel">Quizzes</a>
+        <a href="tutor-dashboard.html">Tutor Dashboard</a>
+      </nav>
+      <button id="siteLogoutButton" class="site-logout" type="button" style="display:none;">
+        <img src="assets/logout-icon.svg" alt="Logout" />
+        <span>Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container dashboard-page">
+    <section class="dashboard-panel">
+      <h1>Student Dashboard</h1>
+      <p>View the enquiries you've submitted and track your tutoring requests.</p>
+    </section>
+
+    <section class="dashboard-panel student-login" id="studentLoginPanel">
+      <h2>Student access</h2>
+      <p>Login or create a student account to access available quizzes.</p>
+      <div class="auth-switch">
+        <button type="button" class="auth-tab active" id="showLoginTab">Student Login</button>
+        <button type="button" class="auth-tab" id="showSignupTab">Create Account</button>
+      </div>
+      <div id="loginSection">
+        <form id="studentLoginForm">
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="student@example.com" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required placeholder="Enter password" />
+          </label>
+          <button class="button" type="submit">Login</button>
+        </form>
+        <div id="studentLoginMessage" class="form-message"></div>
+      </div>
+      <div id="signupSection" style="display:none;">
+        <form id="studentSignupForm">
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="student@example.com" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required placeholder="Create password" />
+          </label>
+          <label>
+            Confirm Password
+            <input type="password" name="confirmPassword" required placeholder="Confirm password" />
+          </label>
+          <button class="button" type="submit">Create Account</button>
+        </form>
+        <div id="studentSignupMessage" class="form-message"></div>
+      </div>
+    </section>
+
+    <section class="dashboard-panel" id="studentQuizzesPanel" style="display:none;">
+      <h2 id="studentQuizTitle">Available Quizzes</h2>
+      <p>Each quiz is timed for 1 minute. Select a quiz to begin your attempt.</p>
+      <div id="studentQuizList"></div>
+      <button id="studentLogoutButton" class="button secondary" style="margin-top:1rem;">Logout</button>
+    </section>
+      <h2 id="studentQuizTitle">Available Quizzes</h2>
+      <p>Each quiz is timed for 1 minute. Select a quiz to begin your attempt.</p>
+      <div id="studentQuizList"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Easygrade © 2026 | Student dashboard.</p>
+      <div>
+        <p>Contact: <a href="mailto:support@easygrade.com">support@easygrade.com</a></p>
+        <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <div id="chatWidget" class="chat-widget" aria-hidden="true">
+    <button id="chatToggle" class="chat-toggle"><img src="assets/chat-icon.svg" alt="Chat" class="chat-toggle-icon"/><span class="chat-toggle-label">Chat</span></button>
+    <div class="chat-panel" id="chatPanel">
+      <div class="chat-header">
+        <strong id="chatTitle">Chat with Tutor</strong>
+        <button id="chatClose" aria-label="Close">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" placeholder="Write a message..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
